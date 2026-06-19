@@ -10,7 +10,7 @@ export default function Cases() {
       <div className="mt-10 [column-fill:_balance] sm:columns-2 lg:columns-3 gap-4 space-y-4">
         {cases.items.map((c, i) => (
           <Reveal key={c.name} delay={(i % 3) * 0.06}>
-            <figure className="card card-hover group mb-4 break-inside-avoid overflow-hidden">
+            <figure className="card card-hover card-glow group mb-4 break-inside-avoid overflow-hidden">
               {/* real photo with overlay caption */}
               <div className="relative h-52 overflow-hidden">
                 <img

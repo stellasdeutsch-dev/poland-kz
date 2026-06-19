@@ -19,10 +19,10 @@ export default function Pricing() {
         {pricing.packages.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.08}>
             <div
-              className={`relative flex h-full flex-col rounded-[24px] p-6 sm:p-7 ${
+              className={`relative flex h-full flex-col rounded-[24px] p-6 sm:p-7 transition-all duration-300 ${
                 p.highlighted
-                  ? "bg-ink text-white shadow-[0_30px_70px_-30px_rgba(40,38,255,0.6)] lg:-mt-3 lg:mb-3"
-                  : "card"
+                  ? "bg-ink text-white shadow-[0_30px_70px_-30px_rgba(40,38,255,0.6)] lg:-mt-3 lg:mb-3 hover:shadow-[0_40px_90px_-30px_rgba(40,38,255,0.8)]"
+                  : "card card-hover card-glow"
               }`}
             >
               {p.highlighted && (

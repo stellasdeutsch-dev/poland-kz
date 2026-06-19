@@ -14,7 +14,7 @@ export default function Specialties() {
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {specialties.items.map((s, i) => (
           <Reveal key={s.name} delay={(i % 3) * 0.07}>
-            <div className="card group h-full p-6 transition-shadow hover:shadow-[0_20px_50px_-28px_rgba(10,10,15,0.35)]">
+            <div className="card card-hover card-glow group h-full p-6">
               <div className="flex items-start justify-between">
                 <div className="grid h-12 w-12 place-items-center rounded-2xl bg-ink text-white">
                   <Icon name={s.icon} size={22} />

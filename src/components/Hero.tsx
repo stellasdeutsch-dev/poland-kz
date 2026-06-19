@@ -27,7 +27,7 @@ export default function Hero() {
             <Reveal>
               <h1 className="text-[34px] leading-[1.04] sm:text-[48px] lg:text-[60px] text-ink max-w-[15ch]">
                 {hero.h1Lines[0]}{" "}
-                <span className="text-accent-red">{hero.h1Lines[1]}</span>
+                <span className="text-accent-red animate-pulse-scale">{hero.h1Lines[1]}</span>
               </h1>
             </Reveal>
 
@@ -41,7 +41,7 @@ export default function Hero() {
               <div className="mt-7 flex flex-col gap-3 sm:max-w-md">
                 <button
                   onClick={() => scrollToId(QUIZ_ID)}
-                  className="btn btn-primary btn-shine w-full text-[17px]"
+                  className="btn btn-primary btn-shine btn-glow w-full text-[17px]"
                 >
                   {hero.ctaPrimary}
                   <ArrowRight size={19} strokeWidth={2.5} />

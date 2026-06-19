@@ -9,14 +9,23 @@ export function Reveal({
   children,
   delay = 0,
   className,
+  variant = "default",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
+  variant?: "default" | "left" | "right" | "up";
 }) {
+  const variantClass = {
+    default: "reveal",
+    left: "reveal-left",
+    right: "reveal-right",
+    up: "slide-up",
+  }[variant];
+
   return (
     <div
-      className={`reveal ${className ?? ""}`}
+      className={`${variantClass} ${className ?? ""}`}
       style={delay ? { animationDelay: `${delay}s` } : undefined}
     >
       {children}

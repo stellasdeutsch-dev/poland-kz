@@ -91,9 +91,54 @@ p {
   }
 }
 
+@keyframes reveal-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) rotateY(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .reveal {
   /* fill-mode both holds opacity 0 during delay, settles at opacity 1 */
   animation: reveal-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.reveal-left {
+  animation: reveal-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-right {
+  animation: reveal-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-up {
+  animation: slide-up-fade 0.7s cubic-bezier(0.12, 0.74, 0.58, 1) both;
 }
 
 /* ---------- Ambient + interaction animations ---------- */
@@ -116,6 +161,78 @@ p {
   animation: blob 24s ease-in-out infinite;
 }
 
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    filter: blur(12px);
+  }
+  50% {
+    opacity: 0.7;
+    filter: blur(20px);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(40, 38, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(40, 38, 255, 0.6), 0 0 60px rgba(91, 77, 255, 0.3);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-2), var(--color-accent-red));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.text-glow {
+  animation: text-glow 3s ease-in-out infinite;
+}
+
+.glow-element {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+.pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
 @keyframes floaty {
   0%,
   100% {
@@ -132,12 +249,29 @@ p {
 /* Card hover lift */
 .card-hover {
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 50px -28px rgba(10, 10, 15, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px -20px rgba(40, 38, 255, 0.25), 0 8px 24px -8px rgba(10, 10, 15, 0.1);
+  border-color: rgba(40, 38, 255, 0.2);
+}
+
+@keyframes card-glow {
+  0%, 100% {
+    border-color: rgba(40, 38, 255, 0.1);
+    box-shadow: 0 0 0 0 rgba(40, 38, 255, 0);
+  }
+  50% {
+    border-color: rgba(40, 38, 255, 0.3);
+    box-shadow: 0 0 20px 0 rgba(40, 38, 255, 0.15);
+  }
+}
+
+.card-glow {
+  animation: card-glow 3s ease-in-out infinite;
 }
 
 /* Button shine sweep */
@@ -155,7 +289,7 @@ p {
   background: linear-gradient(
     110deg,
     transparent,
-    rgba(255, 255, 255, 0.32),
+    rgba(255, 255, 255, 0.4),
     transparent
   );
   transform: skewX(-20deg);
@@ -171,9 +305,32 @@ p {
   }
 }
 
+@keyframes button-glow {
+  0%, 100% {
+    box-shadow: 0 8px 24px -8px rgba(40, 38, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 12px 32px -8px rgba(40, 38, 255, 0.8), 0 0 24px -6px rgba(40, 38, 255, 0.4);
+  }
+}
+
+.btn-glow {
+  animation: button-glow 2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    animation: none;
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .slide-up,
+  .gradient-text,
+  .text-glow,
+  .glow-element,
+  .animate-shimmer,
+  .pulse-scale,
+  .card-glow,
+  .btn-glow {
+    animation: none !important;
   }
   .animate-blob,
   .animate-blob-slow,
@@ -188,6 +345,10 @@ p {
   }
   .card-hover:hover {
     transform: none;
+  }
+  .gradient-text {
+    -webkit-text-fill-color: unset;
+    background: none;
   }
 }
 
