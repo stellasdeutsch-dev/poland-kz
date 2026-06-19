@@ -318,6 +318,109 @@ p {
   animation: button-glow 2s ease-in-out infinite;
 }
 
+/* ========== Tab & Panel Animations ========== */
+@keyframes tab-underline {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@keyframes tab-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes panel-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) rotateX(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes checkmark-draw {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes list-item-stagger {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes icon-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes tab-indicator-slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.tab-button-active {
+  animation: tab-pulse 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.panel-content {
+  animation: panel-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.checkmark-icon {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: checkmark-draw 0.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.list-item {
+  animation: list-item-stagger 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.icon-animate {
+  animation: icon-bounce 2s ease-in-out infinite;
+}
+
+.tab-indicator {
+  animation: tab-indicator-slide 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .reveal-left,
@@ -329,7 +432,13 @@ p {
   .animate-shimmer,
   .pulse-scale,
   .card-glow,
-  .btn-glow {
+  .btn-glow,
+  .tab-button-active,
+  .panel-content,
+  .checkmark-icon,
+  .list-item,
+  .icon-animate,
+  .tab-indicator {
     animation: none !important;
   }
   .animate-blob,
