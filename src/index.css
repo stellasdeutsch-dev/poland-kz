@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design system: Skillbox-style, adapted for Poland / EU / education
+   Tokens are exposed both as Tailwind utilities (bg-primary, text-ink…)
+   and as CSS variables (var(--color-primary)…).
+   ============================================================ */
+@theme {
+  /* Palette */
+  --color-bg: #ffffff;
+  --color-ink: #0a0a0f;
+  --color-ink-soft: #3a3a44;
+  --color-primary: #2826ff;
+  --color-primary-2: #5b4dff;
+  --color-promo: #eeff6b;
+  --color-accent-red: #ff4d2e;
+  --color-surface: #f5f5f7;
+  --color-surface-2: #ececf0;
+  --color-success: #16a34a;
+
+  /* Typography */
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  /* Radii */
+  --radius-card: 24px;
+  --radius-btn: 14px;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* ---------- Accessibility: visible focus ---------- */
+*:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ---------- Entrance reveal (CSS-only, viewport-independent) ---------- */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  /* fill-mode both holds opacity 0 during delay, settles at opacity 1 */
+  animation: reveal-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---------- Ambient + interaction animations ---------- */
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(22px, -28px) scale(1.06);
+  }
+  66% {
+    transform: translate(-16px, 16px) scale(0.96);
+  }
+}
+.animate-blob {
+  animation: blob 16s ease-in-out infinite;
+}
+.animate-blob-slow {
+  animation: blob 24s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+.animate-float {
+  animation: floaty 4.5s ease-in-out infinite;
+}
+
+/* Card hover lift */
+.card-hover {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px -28px rgba(10, 10, 15, 0.3);
+}
+
+/* Button shine sweep */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(255, 255, 255, 0.32),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shine 3.4s ease-in-out infinite;
+}
+@keyframes shine {
+  0% {
+    left: -120%;
+  }
+  55%,
+  100% {
+    left: 140%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
+  .animate-blob,
+  .animate-blob-slow,
+  .animate-float {
+    animation: none;
+  }
+  .btn-shine::after {
+    display: none;
+  }
+  .card-hover {
+    transition: none;
+  }
+  .card-hover:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Component utility classes ---------- */
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 52px;
+    padding: 14px 24px;
+    border-radius: var(--radius-btn);
+    font-weight: 800;
+    font-size: 16px;
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+    border: none;
+    text-decoration: none;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .btn:active {
+    transform: translateY(1px) scale(0.99);
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 8px 24px -8px color-mix(in srgb, var(--color-primary) 70%, transparent);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-2);
+  }
+
+  .btn-dark {
+    background: var(--color-ink);
+    color: #fff;
+  }
+
+  .btn-dark:hover {
+    background: #1c1c26;
+  }
+
+  .btn-outline {
+    background: #fff;
+    color: var(--color-ink);
+    border: 1.5px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-ink);
+  }
+
+  .card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    border: 1px solid color-mix(in srgb, var(--color-ink) 8%, transparent);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  .btn:active {
+    transform: none;
+  }
+}
