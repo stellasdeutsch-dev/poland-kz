@@ -22,6 +22,15 @@ npm run build    # прод-сборка в dist/
 npm run preview  # просмотр прод-сборки
 ```
 
+## Деплой
+
+Сайт опубликован на GitHub Pages: **https://stellasdeutsch-dev.github.io/poland-kz/**
+
+Деплой автоматический: при каждом push в ветку `main` workflow
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) собирает проект и
+публикует на Pages. Путь `base` в `vite.config.ts` задан как `/poland-kz/`
+(для project-site Pages); если переименуете репозиторий, поменяйте и его.
+
 ## Структура
 
 ```
