@@ -1,371 +1,320 @@
-# Постеры для таргета TikTok / Instagram — промпты для GPT Image
+# Постеры для TikTok / Instagram таргета — промпты под сегменты ЦА
 
-24 готовых концепта под холодный трафик на сайт. Это **креативная матрица**: разные
-офферы × форматы × аудитории, чтобы было что A/B-тестить, а не 20 одинаковых картинок.
+28 готовых концептов под холодный трафик на сайт (квиз → WhatsApp), разбитых по
+**целевым аудиториям**. Под каждую ЦА — свой крючок, боль и визуал. Это даёт точное
+попадание в сообщение и чистый A/B по сегментам.
+
+> Стратегия и отстройка от конкурентов — в [`COMPETITOR_ANALYSIS.md`](COMPETITOR_ANALYSIS.md).
+> Запуск рекламы по шагам — в [`ADS_PLAYBOOK.md`](ADS_PLAYBOOK.md).
 
 ---
 
 ## Как пользоваться (читать обязательно)
 
 1. **Модель.** Генерируй в ChatGPT (GPT-4o image / gpt-image-1). Вставляй блок `Промпт` как есть.
-2. **Текст на картинке.** GPT-Image умеет в текст, но **кириллицу иногда коверкает**.
-   Профи-схема:
-   - **Вариант A (быстро):** вставляй промпт вместе с блоком `Текст на постере` — модель впечатает.
-     Если буквы поплыли — регенерируй 2-3 раза.
-   - **Вариант B (надёжно, рекомендую для заголовков):** убери текст из промпта, добавь
-     слова `clean empty space at top/bottom for text overlay`, а сам текст набей сверху в
-     **Canva / CapCut** своим шрифтом (Manrope ExtraBold). Кириллица будет идеальной.
-3. **Соотношение сторон.**
-   - **9:16** — TikTok, Reels, Stories (основной формат таргета).
-   - **4:5** — лента Instagram.
-   - Генерь в 9:16, для 4:5 потом обрежь центр.
-4. **Языки.** Сцена описана по-английски (модель так точнее рисует), текст на постере — на русском.
-5. **CTA-ссылка.** Везде ведём на сайт. На креативе: `Ссылка в профиле` или твой домен.
-   В TikTok/Reels добавь голосом/подписью «жми ссылку в шапке».
+2. **Текст на картинке.** GPT-Image иногда коверкает **кириллицу**. Две схемы:
+   - **A (быстро):** вставляй промпт с блоком `Текст`, регенерируй 2–3 раза если буквы поплыли.
+   - **B (надёжно, для заголовков):** убери текст из промпта, добавь `clean empty space for
+     text overlay`, а слова набей в **Canva / CapCut** шрифтом Manrope ExtraBold.
+3. **Форматы:** генерь **9:16** (TikTok, Reels, Stories) — основной; **4:5** для ленты Instagram.
+4. **Язык:** сцена — на английском (модель точнее рисует), текст на постере — на русском.
+5. **Везде ведём на сайт:** на креативе `Ссылка в профиле` / домен; в видео — «жми ссылку в шапке».
 
----
+## ⚠️ Модерация Meta / TikTok (чтобы не банили)
 
-## ⚠️ Важно для модерации Meta / TikTok
-
-- **Не обещай гарантию поступления прямым текстом** на креативе («гарантируем зачисление»)
-  — это частая причина отклонения. «Гарантия или вернём взнос» про возврат денег — ок,
-  но мягче зайдёт «Поможем поступить» / «Ведём за руку».
-- Не используй «ты неудачник, если…», дискриминацию по возрасту/полу — Meta режет.
-- Не лепи фото реальных несовершеннолетних без прав. Все люди здесь — сгенерированные.
+- **Не писать «гарантия поступления»** прямым текстом — частая причина отклонения.
+  «Поможем поступить» / «или вернём взнос» (про деньги) — ок.
+- Без «ты неудачник, если…», без давления на комплексы — Meta режет.
+- Реальные несовершеннолетние — только сгенерированные лица, не настоящие фото.
 - Логотипы реальных вузов на креатив не ставим.
 
----
-
-## Бренд-кит (вставляй в любой промпт для единого стиля)
+## Бренд-кит (вставляй в любой промпт)
 
 ```
 Brand style: modern edtech / Skillbox-inspired. Clean, bright, premium.
 Colors: electric blue #2826ff (primary), soft violet #5b4dff, lime-yellow accent #eeff6b,
-warm red accent #ff4d2e, near-black ink #0a0a0f, light grey #f5f5f7, pure white background.
-Typography: huge ultra-bold geometric sans-serif (Manrope / Inter ExtraBold), tight letter spacing.
+warm red accent #ff4d2e, near-black ink #0a0a0f, light grey #f5f5f7, white background.
+Typography: huge ultra-bold geometric sans-serif (Manrope / Inter ExtraBold), tight tracking.
 Shapes: rounded 24px cards, soft shadows, generous negative space, flat vector icons.
-Mood: optimistic, aspirational, trustworthy, youthful. NOT stock-photo cheesy.
+Mood: optimistic, aspirational, trustworthy, youthful. NOT cheesy stock photo.
 ```
 
-**Факты, которые можно ставить на постеры (всё из оффера):**
-`без ЕНТ` · `без отработки` · `диплом ЕС` · `1700+ казахстанцев уже учатся` ·
-`от 1500€ в год` · `работай легально во время учёбы` · `ВНЖ после диплома` ·
-`налог 0% до 26 лет` · `поступление по аттестату` · `программы на английском` ·
-`приём почти круглый год` · `бакалавриат и магистратура` · `поток 2026` · `от А до Я`
+**Факты-аргументы (бери под нужный сегмент):** `без ЕНТ` · `без отработки` ·
+`диплом ЕС` · `1700+ казахстанцев учатся` · `от 1500€/год` · `работа во время учёбы` ·
+`ВНЖ после диплома` · `налог 0% до 26` · `по аттестату` · `программы на английском` ·
+`приём почти круглый год` · `поток 2026` · `или вернём взнос` · `от А до Я`
 
 ---
 
-## Банк заголовков (hooks) — для подписей и текста на постере
+# СЕГМЕНТЫ ЦА
 
-Хук решает 80% результата. Тестируй разные:
+Краткая карта (детали таргета — в `ADS_PLAYBOOK.md`):
 
-- Не сдал ЕНТ? В Европу всё равно можно.
-- Аттестата достаточно. Без ЕНТ и без отработки.
-- 1700+ казахстанцев уже учатся в Польше. Ты следующий.
-- Диплом ЕС от 1500€ в год.
-- Учись в Польше. Работай легально. Останься в ЕС.
-- До 26 лет — налог 0% с зарплаты.
-- Поступаем по аттестату. Экзамены не нужны.
-- Поток 2026 уже идёт. Места ограничены.
-- Родители, выдохните: поступление под ключ.
-- Берём всё на себя — от документов до встречи в аэропорту.
-
-**CTA-кнопки:** `Оцени шансы бесплатно` · `Узнай, подходишь ли ты` · `Получи гайд` ·
-`Ссылка в профиле` · `Забронируй место`
+| # | Сегмент | Возраст | Кто решает | Главная боль | Главный крючок |
+|---|---------|---------|------------|--------------|----------------|
+| 1 | Выпускники 11 класса | 16–18 | подросток + родитель | страх ЕНТ, «куда поступать» | «В Европу без ЕНТ, по аттестату» |
+| 2 | Родители выпускников | 38–55 | мама/папа (платят) | безопасность, деньги, риск | «Поступление под ключ, или вернём взнос» |
+| 3 | После 9–11 / колледжи | 15–18 + родитель | родитель | дорого, рано уезжать | «Бесплатные колледжи в ЕС» |
+| 4 | Студенты вузов СНГ | 18–22 | сам | разочарование в местном вузе | «Переведись в вуз ЕС» |
+| 5 | Выпускники / магистратура | 22–28 | сам | карьера, ВНЖ, ROI | «Магистратура в ЕС → работа и ВНЖ» |
+| 6 | «Не сдал ЕНТ» (сезон) | 17–19 + родитель | оба, срочно | провал/низкий балл, паника | «Не сдал ЕНТ? Есть план Б — Европа» |
 
 ---
 
-# КОНЦЕПТЫ
+## ЦА 1. Выпускники 11 класса (мечта + свобода)
 
-## Блок 1. Типографика-постеры (заголовок-герой, бренд)
+### 1.1 «Без ЕНТ» — главный оффер
+**9:16 · крючок: страх ЕНТ снят**
+```
+Vertical 9:16 advertising poster, pure white background, modern edtech style. A giant
+ultra-bold sans-serif headline fills the frame; one word sits inside a rounded electric-blue
+#2826ff box. A small lime-yellow pill button at the bottom. Tiny flat icons of a graduation
+cap and an EU passport in the corners. Generous negative space, premium and optimistic.
+[BRAND-KIT]
+```
+**Текст:** `Поступи в вуз Европы [без ЕНТ]` · кнопка `Оцени шансы за 1 минуту` · `Ссылка в профиле`
 
-Сильные, текстовые, узнаваемые. Лучшее под Stories/ленту.
+### 1.2 Lifestyle — студентка у кампуса
+**9:16 / 4:5 · крючок: мечта о Европе**
+```
+Photo-realistic vertical shot: a happy confident Kazakh female student ~18, holding a laptop,
+in front of a modern European university campus with autumn trees. Natural daylight, shallow
+depth of field, candid aspirational lifestyle photography. Keep top third clean for a headline.
+Subtle blue color grade.
+```
+**Текст (Canva):** `Из Казахстана — в вуз ЕС. По аттестату.` · кнопка `Оцени шансы`
 
-### 1. «Без ЕНТ» — главный оффер
-**Формат:** 9:16 · **Аудитория:** выпускники 11 класса
+### 1.3 POV-мем (TikTok native)
+**9:16 · крючок: открытие/инсайт**
 ```
-Vertical 9:16 advertising poster, modern edtech style on a pure white background.
-A giant ultra-bold geometric sans-serif headline fills the frame, tight letter spacing.
-One word is highlighted inside a rounded electric-blue #2826ff rectangle, the rest is
-near-black #0a0a0f. A small lime-yellow #eeff6b rounded pill button at the bottom.
-Minimal flat icons of a graduation cap and an EU passport float subtly in the corners.
-Generous negative space, soft shadows, premium and optimistic. [BRAND-KIT colors above]
+Vertical 9:16 meme-style image, bold white "POV" caption bar at top over a candid photo-real
+background of a relieved teenager throwing school papers in the air outdoors. Casual, funny,
+native TikTok energy, slightly grainy. Space for caption top and bottom.
 ```
-**Текст на постере:** заголовок `Поступи в вуз Европы [без ЕНТ]` · кнопка `Оцени шансы бесплатно` · мелко снизу `Ссылка в профиле`
+**Текст:** верх `POV: узнал, что в Европу можно без ЕНТ` · низ `Ссылка в профиле 👆`
 
-### 2. «Аттестата достаточно»
-**Формат:** 9:16 · **Аудитория:** не сдавшие/не желающие ЕНТ
+### 1.4 Триада выгод
+**9:16 · крючок: «почему Польша»**
 ```
-Vertical 9:16 poster, white background, bold edtech style. Center: a stylized school
-certificate / diploma document as a clean flat illustration, tilted slightly, with a green
-check-mark badge. Around it a huge ultra-bold headline. Electric blue #2826ff and warm red
-#ff4d2e accents, lime-yellow pill button. Lots of negative space, crisp and modern.
+Vertical 9:16 poster, white background. Three stacked rounded cards, each a flat line icon
++ short bold text: graduation cap, briefcase, residence card. Electric blue icons, near-black
+text, lime-yellow accent, bold headline on top. Clean Skillbox layout. [BRAND-KIT]
 ```
-**Текст:** `Аттестата достаточно` / подзаголовок `без ЕНТ · без вступительных экзаменов` · кнопка `Узнай, подходишь ли ты`
-
-### 3. Стат-герой «1700+»
-**Формат:** 9:16 · **Аудитория:** холодная, социальное доказательство
-```
-Vertical 9:16 poster, white background. A massive number "1700+" in ultra-bold blue
-#2826ff typography dominates the top two-thirds. Below it, a clean row of tiny diverse
-student avatars as flat vector circles. Minimal, confident, data-driven edtech aesthetic,
-soft shadows, lime-yellow accent pill at bottom.
-```
-**Текст:** `1700+ казахстанцев уже учатся в Польше` / `Ты следующий` · кнопка `Оцени шансы`
-
-### 4. «от 1500€» — цена-якорь
-**Формат:** 9:16 · **Аудитория:** бюджет-чувствительные, родители
-```
-Vertical 9:16 poster, white background, premium edtech style. Huge bold price "от 1500€"
-as the hero, with a small "в год" caption. A subtle flat illustration of a European
-university building and euro coins stacked. Electric blue and lime-yellow palette,
-rounded cards, lots of whitespace, trustworthy and clean.
-```
-**Текст:** `Диплом ЕС от 1500€ в год` · кнопка `Подбор вузов под бюджет`
-
-### 5. Триада выгод (vertical list)
-**Формат:** 9:16 · **Аудитория:** холодная
-```
-Vertical 9:16 poster, white background. Three stacked rounded cards, each with a flat
-line icon on the left and short bold text on the right: a graduation cap, a briefcase, a
-residence-permit card. Electric blue #2826ff icons, near-black text, lime-yellow accent.
-Big bold headline on top. Clean Skillbox-style layout, generous spacing.
-```
-**Текст:** заголовок `3 причины выбрать Польшу` · карточки `Диплом ЕС` / `Работа легально` / `ВНЖ после учёбы` · кнопка `Узнать больше`
+**Текст:** `Диплом ЕС · Работа легально · ВНЖ` · кнопка `Узнать больше`
 
 ---
 
-## Блок 2. Реальные студенты (фото-реализм + оверлей) — для ленты Instagram
+## ЦА 2. Родители выпускников (безопасность + контроль)
 
-Полированные, «глянцевые». Человеческое лицо = доверие.
+### 2.1 Спокойствие мамы
+**4:5 / 9:16 · крючок: «выдохните»**
+```
+Photo-realistic vertical shot: a warm reassured middle-aged Kazakh mother smiling while
+looking at a laptop with her teenage child beside her, cozy home, soft golden light, candid
+family lifestyle, calm and trustworthy. Keep top area clean for a headline overlay.
+```
+**Текст:** `Родители, выдохните: поступление под ключ` · кнопка `Как мы помогаем`
 
-### 6. Студентка у европейского кампуса
-**Формат:** 4:5 / 9:16 · **Аудитория:** девушки 17-22
+### 2.2 «От А до Я» — дорожная карта
+**9:16 · крючок: контроль процесса**
 ```
-Photo-realistic vertical shot: a happy confident Central-Asian (Kazakh) female student,
-~19 years old, holding a laptop and notebook, standing in front of a modern European
-university campus with autumn trees. Natural daylight, shallow depth of field, candid
-lifestyle photography, aspirational and warm. Leave clean empty space on the left/top for
-a text overlay. Subtle blue color grade.
+Vertical 9:16 infographic, clean roadmap of 5 steps with flat icons: consultation → documents
+→ admission → visa → airport meeting. Electric blue connecting line, green checkmarks, white
+background, bold header. Calm, organized, premium edtech. [BRAND-KIT]
 ```
-**Текст (добавить в Canva):** `Из Казахстана — в вуз ЕС` · кнопка `Оцени шансы` · `Ссылка в профиле`
+**Текст:** `Берём всё на себя — от документов до встречи в аэропорту` · кнопка `Консультация`
 
-### 7. Парень-студент, уверенный взгляд
-**Формат:** 9:16 · **Аудитория:** парни 17-22
+### 2.3 Снятие риска (гарантия)
+**9:16 · крючок: «а если не поступит?»**
 ```
-Photo-realistic vertical portrait: a young Kazakh male student, ~20, smiling, wearing a
-casual hoodie, holding an EU passport and acceptance letter, modern university hallway
-softly blurred behind. Bright natural light, candid documentary style, aspirational.
-Keep the top third clean for a headline overlay.
+Vertical 9:16 poster, white background, a flat illustration of a signed contract document
+with a green shield/checkmark badge. Bold short headline, electric blue and lime-yellow
+accents, trustworthy and clean, lots of whitespace. [BRAND-KIT]
 ```
-**Текст:** `Поступил без ЕНТ. Работаю легально.` · кнопка `Узнай, подходишь ли ты`
+**Текст:** `Не поступит — вернём взнос. Гарантия в договоре.` · кнопка `Узнать условия`
 
-### 8. Группа друзей на кампусе (lifestyle)
-**Формат:** 9:16 · **Аудитория:** холодная, мечта/принадлежность
+### 2.4 Цена-якорь для семьи
+**9:16 · крючок: доступно**
 ```
-Photo-realistic vertical lifestyle photo: a small diverse group of international students
-(including Central-Asian faces) laughing together on a sunny modern European campus lawn,
-backpacks, coffee cups. Candid, warm, aspirational, cinematic shallow depth of field.
-Bottom third clean for text and CTA button.
+Vertical 9:16 poster, white background, premium edtech. Huge bold "от 1500€" as hero with
+small "в год" caption, subtle flat illustration of a European university building and euro
+coins. Electric blue + lime-yellow, rounded cards, trustworthy. [BRAND-KIT]
 ```
-**Текст:** `Твоя студенческая жизнь в Европе ближе, чем кажется` · кнопка `Ссылка в профиле`
-
-### 9. Девушка + смартфон с сайтом (нативно)
-**Формат:** 9:16 · **Аудитория:** ретаргет/тёплая
-```
-Photo-realistic vertical shot of a Kazakh girl smiling at her smartphone, cozy home
-background, soft warm light, casual. The phone screen glows blue. Candid UGC vibe.
-Leave space top-right for a speech-bubble style callout.
-```
-**Текст:** callout `Оценила шансы за 1 минуту` · кнопка `Пройди квиз бесплатно`
+**Текст:** `Диплом ЕС от 1500€ в год. Дешевле, чем частный вуз дома.` · кнопка `Подбор под бюджет`
 
 ---
 
-## Блок 3. Нативный UGC-стиль (под TikTok) — «не реклама»
+## ЦА 3. После 9–11 класса / колледжи (бюджет + раннее начало)
 
-TikTok любит «органику». Эти заходят как обычный контент, CTR выше.
+### 3.1 Бесплатные колледжи
+**9:16 · крючок: «бесплатно»**
+```
+Vertical 9:16 poster, white background. A big bold "0₸" or "Бесплатно" highlight in lime-yellow
+on electric blue, flat illustration of a European college building and a diploma. Youthful,
+clean edtech, optimistic. [BRAND-KIT]
+```
+**Текст:** `Колледжи в ЕС — бесплатно. Европейский диплом и профессия.` · кнопка `Узнать, кто подходит`
 
-### 10. Скриншот-заметка / «листочек»
-**Формат:** 9:16 · **Аудитория:** холодная TikTok
+### 3.2 «Начни путь раньше»
+**9:16 · крючок: фора по времени**
 ```
-Vertical 9:16 image styled like an authentic phone screenshot of a Notes app or a
-handwritten checklist on paper, slightly imperfect, casual. A simple checklist with green
-checkmarks. Plain, native, non-advertising look. Minimal blue accent. Looks user-generated.
+Vertical 9:16 flat vector illustration of a confident young teen stepping onto an upward path
+of stairs toward a European city skyline, sunrise tones, electric blue and lime-yellow.
+Aspirational, modern, motivational. [BRAND-KIT]
 ```
-**Текст (чек-лист):** `Что нужно для Польши:` ✅ `аттестат` ✅ `загранпаспорт` ❌ `ЕНТ — НЕ нужен` · мелко `подробности — ссылка в профиле`
+**Текст:** `После 9–10 класса — уже в Европе` · кнопка `Оцени шансы`
 
-### 11. POV / мем-формат
-**Формат:** 9:16 · **Аудитория:** Gen Z TikTok
+### 3.3 Родителю младшего: безопасный старт
+**4:5 · крючок: опека + безопасность**
 ```
-Vertical 9:16 meme-style image, bold white "POV" caption bar at the top on a candid
-photo-real background of a relieved teenager throwing exam papers in the air. Casual,
-funny, native TikTok energy, slightly grainy. Space for caption text top and bottom.
+Photo-realistic vertical: a caring scene of a young teen student with a friendly adult mentor/
+curator on a safe modern European campus, warm reassuring light, candid. Space for headline top.
 ```
-**Текст:** сверху `POV: ты узнал, что в Европу можно без ЕНТ` · снизу `Ссылка в профиле 👆`
+**Текст:** `Опека до 18 лет и куратор на месте` · кнопка `Подробнее`
 
-### 12. «Две жизни» split (TikTok native)
-**Формат:** 9:16 · **Аудитория:** холодная
-```
-Vertical 9:16 split-screen, native casual style. Top half: a stressed student buried in
-ENT prep books, cool grey tone. Bottom half: the same vibe student relaxed on a bright
-European campus, warm tone. Simple, honest, scroll-stopping contrast.
-```
-**Текст:** верх `Готовиться к ЕНТ год` · низ `Или поступить по аттестату в ЕС` · кнопка `Как? — ссылка в профиле`
+---
 
-### 13. Говорящая голова / каркас под рилс
-**Формат:** 9:16 · **Аудитория:** холодная
+## ЦА 4. Студенты вузов СНГ (перевод, разочарование)
+
+### 4.1 «Переведись в вуз ЕС»
+**9:16 · крючок: смена траектории**
 ```
-Vertical 9:16 frame designed as a talking-head reel background: a clean modern room,
-soft bokeh lights, a lower-third banner area in electric blue for subtitles, and a small
-brand logo corner. Empty center for a person to be composited or filmed. Modern, friendly.
+Vertical 9:16 poster, white background, a bold curved arrow transferring from a grey plain
+building (left) to a bright modern European university (right, electric blue glow). Big bold
+headline, clean edtech, lime-yellow accent. [BRAND-KIT]
+```
+**Текст:** `Переведись в вуз ЕС с сохранением курса` · кнопка `Проверить, возможно ли`
+
+### 4.2 «Две жизни» split (TikTok)
+**9:16 · крючок: контраст**
+```
+Vertical 9:16 split-screen, native casual style. Top: a bored student in a dull local lecture
+hall, grey tone. Bottom: the same vibe student energized on a bright European campus, warm
+tone. Honest, scroll-stopping contrast.
+```
+**Текст:** верх `Доучиваться там, где скучно?` низ `Или перевестись в Европу` · кнопка `Ссылка в профиле`
+
+### 4.3 Работа + 0% налог
+**9:16 · крючок: деньги уже сейчас**
+```
+Vertical 9:16, flat vector of a student balancing laptop studies and a part-time job, with a
+bold "0%" tax badge. Electric blue + lime-yellow, modern, optimistic. [BRAND-KIT]
+```
+**Текст:** `Учись и работай легально. До 26 — налог 0%.` · кнопка `Почему ЕС`
+
+---
+
+## ЦА 5. Выпускники вузов / магистратура (карьера + ВНЖ)
+
+### 5.1 Магистратура → ВНЖ
+**9:16 · крючок: карьерный ROI**
+```
+Vertical 9:16 infographic: an upward path with milestone dots connecting flat icons —
+master cap → briefcase → residence card → house in EU. Electric blue path on white,
+lime-yellow highlights, premium, aspirational. [BRAND-KIT]
+```
+**Текст:** `Магистратура в ЕС → работа → ВНЖ` · кнопка `Построй карьеру в Европе`
+
+### 5.2 Уверенный выпускник
+**9:16 / 4:5 · крючок: статус/амбиции**
+```
+Photo-realistic vertical portrait: a sharp confident Kazakh young professional ~24 in smart-
+casual, modern European business district softly blurred behind, holding a laptop. Cinematic,
+aspirational, success vibe. Keep top third clean for headline.
+```
+**Текст (Canva):** `Диплом ЕС = другой уровень карьеры` · кнопка `Оцени шансы на магистратуру`
+
+### 5.3 Нострификация без головной боли
+**9:16 · крючок: снятие бюрократии**
+```
+Vertical 9:16, flat illustration of messy stack of documents transforming into one clean
+approved certificate with a green check. Electric blue + red accent for "before", green for
+"after". Clean edtech, bold header. [BRAND-KIT]
+```
+**Текст:** `Нострификация, апостиль, переводы — берём на себя` · кнопка `Узнать процесс`
+
+---
+
+## ЦА 6. «Не сдал ЕНТ» (сезонная, июнь–август, высокий интент)
+
+### 6.1 «Не сдал? Есть план Б»
+**9:16 · крючок: спасение после провала**
+```
+Vertical 9:16 poster, white background. Bold empathetic headline, a flat illustration of an
+open door with light and a European campus visible through it (a way out / plan B). Warm red
+#ff4d2e accent turning into hopeful electric blue. Reassuring, not shaming. [BRAND-KIT]
+```
+**Текст:** `Не сдал ЕНТ? В Европу всё равно можно. По аттестату.` · кнопка `Узнай, подходишь ли ты`
+
+### 6.2 Миф vs Правда
+**9:16 · крючок: объекция-хендлинг**
+```
+Vertical 9:16 white poster, two-column "МИФ / ПРАВДА" layout, red cross vs green check icons,
+short bold lines, modern flat edtech, blue and red accents, clean grid. [BRAND-KIT]
+```
+**Текст:** `МИФ: без ЕНТ никуда` → `ПРАВДА: в вузы Польши — по аттестату` · кнопка `Узнать как`
+
+### 6.3 Сравнение путей
+**9:16 · крючок: рациональный выбор**
+```
+Vertical 9:16 clean comparison infographic, two rounded columns: grey "Пересдавать ЕНТ год"
+vs highlighted blue "Поступить в ЕС по аттестату". Rows with tiny icons, green checks on the
+right, grey dashes left. Skillbox infographic style. [BRAND-KIT]
+```
+**Текст:** `Пересдавать год — или уже учиться в Европе?` · кнопка `Сравнить пути`
+
+### 6.4 Срочность потока
+**9:16 · крючок: дедлайн/FOMO**
+```
+Vertical 9:16 poster, white background with a bold electric-blue diagonal banner in the top
+corner, a small ticket/countdown flat icon, warm-red #ff4d2e urgency accent, big bold headline.
+Punchy, modern edtech. [BRAND-KIT]
+```
+**Текст:** плашка `НАБОР 2026` · `Места ограничены. Подай документы сейчас.` · кнопка `Забронировать место`
+
+---
+
+## БОНУС: нативные UGC-каркасы (под любую ЦА, для TikTok)
+
+### B1. Talking-head каркас под Reels
+```
+Vertical 9:16 frame for a talking-head reel: clean modern room, soft bokeh lights, a lower-
+third banner area in electric blue for subtitles, small brand logo corner, empty center for a
+filmed/composited person. Friendly, modern.
 ```
 **Текст (нижняя плашка):** `5 фактов о поступлении в Польшу без ЕНТ` · `→ ссылка в профиле`
 
----
-
-## Блок 4. Сравнение / до-после
-
-Самый «продающий» формат — наглядно показывает разницу.
-
-### 14. Казахстан vs Польша (таблица)
-**Формат:** 9:16 / 4:5 · **Аудитория:** холодная, рациональная
+### B2. Скриншот-заметка (чек-лист)
 ```
-Vertical 9:16 clean comparison infographic, white background, two rounded columns.
-Left column grey "ЕНТ-путь", right column highlighted in electric blue #2826ff "Польша".
-Rows with tiny flat icons and short labels, green checks on the right, grey dashes on the
-left. Modern Skillbox infographic style, bold header, lots of whitespace.
+Vertical 9:16 styled as an authentic phone Notes screenshot / handwritten checklist on paper,
+slightly imperfect, casual, green checkmarks, minimal blue accent. Looks user-generated.
 ```
-**Текст:** заголовок `Сравни сам` · строки `Нужен ЕНТ`, `Отработка`, `Диплом ЕС`, `Работа во время учёбы`, `ВНЖ после` · кнопка `Оцени шансы`
-
-### 15. До / после (эмоция)
-**Формат:** 9:16 · **Аудитория:** холодная
-```
-Vertical 9:16, two stacked panels with a bold divider. Top "ДО": flat illustration of a
-worried student under a heavy "ЕНТ" cloud, muted colors. Bottom "ПОСЛЕ": same character
-graduating in an EU cap and gown, bright blue and lime-yellow, confetti. Clean vector
-edtech illustration style.
-```
-**Текст:** `ДО` / `ПОСЛЕ` · подпись `Путь от аттестата до диплома ЕС` · кнопка `Начать`
-
-### 16. Чек-лист «миф vs правда»
-**Формат:** 9:16 · **Аудитория:** объекция-хендлинг
-```
-Vertical 9:16 white poster, two-column "МИФ / ПРАВДА" layout, red cross icons vs green
-check icons, short bold lines. Modern flat edtech style, blue and red accents, clean grid,
-plenty of negative space.
-```
-**Текст:** `МИФ: без ЕНТ никуда не поступить` → `ПРАВДА: в вузы Польши — по аттестату` · кнопка `Узнать как`
+**Текст:** `Что нужно для Польши:` ✅ `аттестат` ✅ `загранпаспорт` ❌ `ЕНТ — НЕ нужен` · `детали — ссылка в профиле`
 
 ---
 
-## Блок 5. Выгоды / инфографика (числа, иконки)
+## Шпаргалка: что тестировать первым
 
-### 17. «Налог 0% до 26»
-**Формат:** 9:16 · **Аудитория:** прагматики, родители
-```
-Vertical 9:16 poster, white background. A bold "0%" as the hero number in electric blue,
-with a small flat icon of a coin/payslip. Clean, confident, financial-benefit edtech style,
-lime-yellow accent pill, generous whitespace.
-```
-**Текст:** `Налог 0% с зарплаты до 26 лет` / `больше денег на руки` · кнопка `Почему Польша`
+Запускай пачками по 3–5 креативов на адсет, меняй только крючок.
 
-### 18. «Работай легально»
-**Формат:** 9:16 · **Аудитория:** студенты, самостоятельные
-```
-Vertical 9:16, flat vector illustration of a student balancing study and a part-time job
-(laptop + barista apron + books) in a clean modern composition. Electric blue and lime-yellow
-palette, bold short headline, Skillbox style, optimistic.
-```
-**Текст:** `Учись и работай легально` / `без отдельного разрешения` · кнопка `Подробнее`
+| Приоритет | Откуда брать | Почему |
+|-----------|--------------|--------|
+| 🥇 | 1.1, 1.3, 6.1 | Самый острый оффер «без ЕНТ» + сезон «не сдал» + нативность TikTok |
+| 🥈 | 2.1, 2.3, 4.2 | Родители (платят) + снятие риска + контраст для студентов |
+| 🥉 | 3.1, 5.1, 6.4 | Бесплатные колледжи + магистратура/ВНЖ + срочность |
 
-### 19. «ВНЖ после диплома» (путь-стрелка)
-**Формат:** 9:16 · **Аудитория:** долгосрочно думающие + родители
-```
-Vertical 9:16 infographic: a simple upward path/arrow with 3-4 milestone dots connecting
-flat icons — graduation cap → briefcase → residence card → house. Electric blue path on
-white, lime-yellow milestone highlights. Clean, aspirational, modern.
-```
-**Текст:** `Учёба → Работа → ВНЖ в ЕС` · кнопка `Построй свой путь`
+**Правила targetolog'а:**
+- 1 креатив = 1 мысль и 1 ЦА. Не мешай выпускника и родителя в одном постере.
+- Крючок читается за 1 секунду, иначе скролл.
+- Лицо/эмоция в первом кадре поднимает удержание (hook rate).
+- Меняй только заголовок между вариантами — поймёшь, что реально работает.
+- Победителя масштабируй, слабых выключай через 3–5 дней.
+- Под результаты ЕНТ (июнь–июль) поднимай ЦА 6 отдельной кампанией.
 
-### 20. «Приём круглый год» (календарь)
-**Формат:** 9:16 · **Аудитория:** «опоздавшие», срочность
-```
-Vertical 9:16 poster, a clean flat calendar illustration with most months highlighted in
-electric blue, a green "открыто" stamp across it. Bold headline, white background,
-lime-yellow accent. Modern edtech, reassuring.
-```
-**Текст:** `Подать документы можно почти круглый год` · кнопка `Успеть на поток 2026`
-
-### 21. Бакалавриат и магистратура (две двери)
-**Формат:** 9:16 · **Аудитория:** студенты вузов + выпускники
-```
-Vertical 9:16, flat illustration of two rounded doorways/portals side by side, one labeled
-area for "Бакалавриат", one for "Магистратура", each with a small icon. Electric blue and
-violet gradient, clean modern edtech, bold header.
-```
-**Текст:** `Поступаем и на бакалавриат, и в магистратуру` · кнопка `Выбрать путь`
-
----
-
-## Блок 6. Родители (отдельная аудитория — таргет 35-55)
-
-### 22. Спокойствие родителя
-**Формат:** 4:5 / 9:16 · **Аудитория:** родители
-```
-Photo-realistic vertical shot: a warm, reassured middle-aged Kazakh mother smiling while
-looking at a laptop with her teenage child beside her, cozy home, soft golden light,
-candid family lifestyle. Keep top area clean for headline. Trustworthy, calm mood.
-```
-**Текст:** `Родители, выдохните: поступление под ключ` · кнопка `Узнать, как мы помогаем`
-
-### 23. «От А до Я» (под ключ)
-**Формат:** 9:16 · **Аудитория:** родители, занятые
-```
-Vertical 9:16 infographic, a clean horizontal-to-vertical roadmap of 5 steps with flat
-icons: consultation → documents → admission → visa → airport meeting. Electric blue line,
-green checkmarks, white background, bold header. Calm, organized, premium edtech.
-```
-**Текст:** `Берём всё на себя — от А до Я` / `от документов до встречи в аэропорту` · кнопка `Получить консультацию`
-
----
-
-## Блок 7. Срочность / сезонность (поток 2026)
-
-### 24. «Поток 2026 · места ограничены»
-**Формат:** 9:16 · **Аудитория:** ретаргет + тёплая (срочность)
-```
-Vertical 9:16 poster, white background with a bold electric-blue diagonal banner across
-the top corner reading the campaign label. A large bold headline, a small countdown/ticket
-flat icon, warm-red #ff4d2e accent for urgency. Clean, punchy, modern edtech.
-```
-**Текст:** плашка `НАБОР 2026` · заголовок `Поток 2026 уже идёт` / `места ограничены` · кнопка `Забронировать место`
-
----
-
-## Шпаргалка: что тестировать первым (приоритет маркетолога)
-
-A/B-тест запускай пачками по 3-5 креативов на адсет. Начни с этих, они обычно дают лучший CTR:
-
-| Приоритет | Концепт | Почему |
-|-----------|---------|--------|
-| 🥇 | №1 «Без ЕНТ», №11 POV-мем, №6 студентка | Самый сильный оффер + нативность TikTok |
-| 🥈 | №3 «1700+», №14 сравнение, №24 срочность | Соц.доказательство + рациональность + FOMO |
-| 🥉 | №22/23 родители, №17 «0%», №19 ВНЖ | Вторая аудитория и долгосрочные выгоды |
-
-**Правила:**
-- 1 креатив = 1 мысль. Не пихай 5 выгод в один постер.
-- Хук читается за 1 секунду или человек скроллит.
-- Лицо/эмоция в первом кадре поднимает удержание.
-- Меняй только хук между вариантами — так поймёшь, что реально работает.
-- Победителя масштабируй, проигравших отключай через 3-5 дней.
-
----
-
-## Финальный чек перед запуском
-
-- [ ] На каждом креативе есть понятный CTA и `Ссылка в профиле` / домен
-- [ ] Кириллица читаема (проверь после генерации, при сбое — Вариант B через Canva)
-- [ ] Нет обещаний «гарантия поступления» прямым текстом (модерация)
-- [ ] 9:16 для TikTok/Reels/Stories, 4:5 для ленты — оба размера готовы
-- [ ] Логотип/брендинг в едином стиле (синий #2826ff + жёлтый #eeff6b)
-- [ ] UTM-метки в ссылке, чтобы видеть, какой креатив дал заявки
+## Чек перед заливкой
+- [ ] Понятный CTA + `Ссылка в профиле`/домен на каждом креативе
+- [ ] Кириллица читаема (иначе — текст в Canva)
+- [ ] Нет «гарантии поступления» прямым текстом
+- [ ] 9:16 для TikTok/Reels/Stories, 4:5 для ленты
+- [ ] Единый бренд-стиль (синий #2826ff + жёлтый #eeff6b)
+- [ ] UTM-метка в ссылке (какой креатив дал заявку) — см. `ADS_PLAYBOOK.md`
