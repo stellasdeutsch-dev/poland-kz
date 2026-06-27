@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Check, ShieldCheck, CheckCircle2, Gift } from "lucide-react";
 import { finalForm } from "../content";
 import { FORM_ID } from "../lib/scroll";
+import { submitLead } from "../lib/leads";
 
 export default function FinalForm() {
   const [name, setName] = useState("");
@@ -12,9 +13,9 @@ export default function FinalForm() {
   function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!consent) return;
-    // Заглушка: позже подключим Telegram-бот / CRM webhook
-    console.log("[FINAL FORM LEAD]", { name, phone });
+    // Show success immediately; deliver the lead in the background.
     setDone(true);
+    void submitLead({ source: "final-form", name, phone });
   }
 
   return (

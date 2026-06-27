@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Gift, CheckCircle2 } from "lucide-react";
 import { quiz } from "../content";
 import { QUIZ_ID } from "../lib/scroll";
+import { submitLead, readableAnswers } from "../lib/leads";
 
 type Phase = "questions" | "form" | "done";
 
@@ -41,9 +42,16 @@ export default function Quiz() {
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
-    // Заглушка: позже подключим Telegram-бот / CRM webhook
-    console.log("[QUIZ LEAD]", { answers, name, phone });
+    // Show success immediately; deliver the lead in the background so a slow
+    // or failed network never blocks the user.
     setPhase("done");
+    void submitLead({
+      source: "quiz",
+      name,
+      phone,
+      answers,
+      answersReadable: readableAnswers(answers),
+    });
   }
 
   const stepNumber =

@@ -55,11 +55,17 @@ src/
 Контакты-плейсхолдеры (замени на реальные) — объект `site` в начале `content.ts`:
 `whatsapp`, `telegram`, `instagram`, `phoneDisplay`, `email`.
 
-### Формы
+### Формы и заявки
 
-Квиз и обе формы сейчас отправляют заявку в заглушку (`console.log`).
-Точки подключения помечены комментарием `// Заглушка:` в `Quiz.tsx` и `FinalForm.tsx` —
-подставь туда Telegram-бот / CRM-webhook.
+Квиз и финальная форма отправляют заявку через `submitLead()` из
+[`src/lib/leads.ts`](src/lib/leads.ts) на один webhook (Google Apps Script),
+который пишет строку в Google Таблицу и шлёт в Telegram + WhatsApp.
+
+Пошаговая настройка (таблица, бот, токены, деплой) — в
+[`SETUP_LEADS.md`](SETUP_LEADS.md). Код бэкенда — [`apps-script/Code.gs`](apps-script/Code.gs).
+
+Пока адрес webhook не вставлен в `leads.ts`, заявки не теряются — они пишутся в
+консоль браузера, а пользователь всё равно видит экран «Спасибо».
 
 ## Чеклист перед запуском рекламы
 
