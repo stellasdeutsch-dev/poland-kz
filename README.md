@@ -59,7 +59,8 @@ src/
 
 Квиз и финальная форма отправляют заявку через `submitLead()` из
 [`src/lib/leads.ts`](src/lib/leads.ts) на один webhook (Google Apps Script),
-который пишет строку в Google Таблицу и шлёт уведомление в Telegram.
+который пишет строку в Google Таблицу. Уведомления в Telegram опциональны и
+выключены по умолчанию (включаются добавлением Script Properties).
 
 Пошаговая настройка (таблица, бот, токены, деплой) — в
 [`SETUP_LEADS.md`](SETUP_LEADS.md). Код бэкенда — [`apps-script/Code.gs`](apps-script/Code.gs).

@@ -1,16 +1,16 @@
 /**
  * Lead receiver for the PolskaWay landing page.
  *
- * Flow:  website  ──POST JSON──▶  this Web App
- *                                   ├─ appends a row to the bound Google Sheet (the database)
- *                                   └─ sends a Telegram message
+ * Flow:  website  ──POST JSON──▶  this Web App  ──▶  Google Sheet (the database)
  *
- * SECRETS live in Script Properties (Project Settings ▸ Script Properties),
- * NEVER in the website code:
- *   TELEGRAM_TOKEN    bot token from @BotFather
- *   TELEGRAM_CHAT_ID  chat / group id that should receive leads
+ * Every quiz / form submission is appended as a row to the bound Google Sheet.
+ * That is all that is required — no tokens, no Script Properties.
  *
- * After editing: Deploy ▸ New deployment ▸ Web app
+ * (Optional) Telegram notifications are OFF by default. To turn them on later,
+ * add two Script Properties — TELEGRAM_TOKEN and TELEGRAM_CHAT_ID — and every
+ * new lead will also be sent to Telegram. Nothing else to change.
+ *
+ * Deploy ▸ New deployment ▸ Web app
  *   Execute as: Me      Who has access: Anyone
  * Copy the /exec URL into the website (VITE_LEAD_ENDPOINT or LEAD_ENDPOINT_FALLBACK).
  */
@@ -21,7 +21,7 @@ function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
     saveRow(data);
-    notifyTelegram(formatMessage(data));
+    maybeNotifyTelegram(data); // no-op unless Telegram is configured
     return json({ ok: true });
   } catch (err) {
     console.error(err);
@@ -64,6 +64,26 @@ function saveRow(data) {
   ]);
 }
 
+// ── Optional Telegram notifications ───────────────────────────────────────────
+// Disabled until TELEGRAM_TOKEN and TELEGRAM_CHAT_ID exist in Script Properties.
+function maybeNotifyTelegram(data) {
+  var props = PropertiesService.getScriptProperties();
+  var token = props.getProperty("TELEGRAM_TOKEN");
+  var chatId = props.getProperty("TELEGRAM_CHAT_ID");
+  if (!token || !chatId) return; // off for now — sheet-only
+
+  UrlFetchApp.fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
+    method: "post",
+    contentType: "application/json",
+    payload: JSON.stringify({
+      chat_id: chatId,
+      text: formatMessage(data),
+      disable_web_page_preview: true,
+    }),
+    muteHttpExceptions: true,
+  });
+}
+
 function formatMessage(data) {
   var lines = [];
   lines.push("🎓 Новая заявка — " + (data.source === "quiz" ? "Квиз" : "Форма"));
@@ -77,24 +97,6 @@ function formatMessage(data) {
     });
   }
   return lines.join("\n");
-}
-
-function notifyTelegram(text) {
-  var props = PropertiesService.getScriptProperties();
-  var token = props.getProperty("TELEGRAM_TOKEN");
-  var chatId = props.getProperty("TELEGRAM_CHAT_ID");
-  if (!token || !chatId) return;
-
-  UrlFetchApp.fetch("https://api.telegram.org/bot" + token + "/sendMessage", {
-    method: "post",
-    contentType: "application/json",
-    payload: JSON.stringify({
-      chat_id: chatId,
-      text: text,
-      disable_web_page_preview: true,
-    }),
-    muteHttpExceptions: true,
-  });
 }
 
 function json(obj) {
