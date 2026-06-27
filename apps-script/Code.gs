@@ -3,19 +3,12 @@
  *
  * Flow:  website  ──POST JSON──▶  this Web App
  *                                   ├─ appends a row to the bound Google Sheet (the database)
- *                                   ├─ sends a Telegram message
- *                                   └─ sends a WhatsApp message (Meta Cloud API)
+ *                                   └─ sends a Telegram message
  *
  * SECRETS live in Script Properties (Project Settings ▸ Script Properties),
  * NEVER in the website code:
  *   TELEGRAM_TOKEN    bot token from @BotFather
  *   TELEGRAM_CHAT_ID  chat / group id that should receive leads
- *   WA_TOKEN          WhatsApp Cloud API access token
- *   WA_PHONE_ID       WhatsApp "Phone number ID" (Meta dashboard)
- *   WA_RECIPIENT      destination number, digits only, intl format (e.g. 77769771878)
- *   WA_TEMPLATE       (optional) approved template name. If empty → plain text
- *                     (plain text only works inside the 24h support window).
- *   WA_LANG           (optional) template language code, default "ru"
  *
  * After editing: Deploy ▸ New deployment ▸ Web app
  *   Execute as: Me      Who has access: Anyone
@@ -28,9 +21,7 @@ function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
     saveRow(data);
-    var text = formatMessage(data);
-    notifyTelegram(text);
-    notifyWhatsApp(data, text);
+    notifyTelegram(formatMessage(data));
     return json({ ok: true });
   } catch (err) {
     console.error(err);
@@ -102,58 +93,6 @@ function notifyTelegram(text) {
       text: text,
       disable_web_page_preview: true,
     }),
-    muteHttpExceptions: true,
-  });
-}
-
-function notifyWhatsApp(data, text) {
-  var props = PropertiesService.getScriptProperties();
-  var token = props.getProperty("WA_TOKEN");
-  var phoneId = props.getProperty("WA_PHONE_ID");
-  var to = props.getProperty("WA_RECIPIENT");
-  if (!token || !phoneId || !to) return;
-
-  var template = props.getProperty("WA_TEMPLATE");
-  var lang = props.getProperty("WA_LANG") || "ru";
-  var url = "https://graph.facebook.com/v21.0/" + phoneId + "/messages";
-
-  var body;
-  if (template) {
-    // Business-initiated message → an approved template is required.
-    // The template body should contain two variables: {{1}} name, {{2}} phone.
-    body = {
-      messaging_product: "whatsapp",
-      to: to,
-      type: "template",
-      template: {
-        name: template,
-        language: { code: lang },
-        components: [
-          {
-            type: "body",
-            parameters: [
-              { type: "text", text: data.name || "—" },
-              { type: "text", text: "+7 " + (data.phone || "—") },
-            ],
-          },
-        ],
-      },
-    };
-  } else {
-    // Plain text only delivers inside the 24h customer-service window.
-    body = {
-      messaging_product: "whatsapp",
-      to: to,
-      type: "text",
-      text: { body: text },
-    };
-  }
-
-  UrlFetchApp.fetch(url, {
-    method: "post",
-    contentType: "application/json",
-    headers: { Authorization: "Bearer " + token },
-    payload: JSON.stringify(body),
     muteHttpExceptions: true,
   });
 }
