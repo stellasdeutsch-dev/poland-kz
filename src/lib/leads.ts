@@ -15,7 +15,8 @@ import { quiz } from "../content";
  *   1. Set VITE_LEAD_ENDPOINT in the build environment, or
  *   2. Paste it into LEAD_ENDPOINT_FALLBACK below.
  */
-const LEAD_ENDPOINT_FALLBACK = "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+const LEAD_ENDPOINT_FALLBACK =
+  "https://script.google.com/macros/s/AKfycbxkchQa3pKXqN4vwo78VsYmDXBJSfM-JvGLzWMVetjbqkaTWVjOYYICiscofyCNM_5xrg/exec";
 
 const LEAD_ENDPOINT =
   (import.meta.env.VITE_LEAD_ENDPOINT as string | undefined) ||
