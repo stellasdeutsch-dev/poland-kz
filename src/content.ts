@@ -8,7 +8,6 @@ export const site = {
   brandTagline: "Поступление в Польшу",
   phoneDisplay: "+7 776 977 18 78",
   whatsapp: "https://wa.me/77769771878",
-  telegram: "https://t.me/+77769771878",
   instagram: "https://instagram.com/your_agency",
   email: "hello@example.com",
   officeCity: "Астана, Казахстан",
@@ -27,7 +26,6 @@ export const hero = {
   sub: "Диплом ЕС · работай легально во время учёбы · ВНЖ после диплома. Ведём за руку от первой консультации до встречи в аэропорту.",
   ctaPrimary: "Оценить шансы бесплатно",
   ctaWhatsApp: "WhatsApp",
-  ctaTelegram: "Telegram",
   image: "photo-1523240795612-9a054b0db644",
   imageAlt: "Студенты учатся в университете Европы",
   stats: [
