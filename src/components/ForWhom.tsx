@@ -13,10 +13,12 @@ export default function ForWhom() {
               <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary/8 text-primary">
                 <Icon name={c.icon} size={28} />
               </div>
-              <h3 className="mt-4 text-[19px] sm:text-[21px] text-ink">
+              <h3 className="mt-5 text-[19px] sm:text-[21px] text-ink">
                 {c.title}
               </h3>
-              <p className="mt-2 text-[15px] text-ink-soft">{c.text}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+                {c.text}
+              </p>
             </div>
           </Reveal>
         ))}

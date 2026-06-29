@@ -24,7 +24,7 @@ export default function Specialties() {
                 </span>
               </div>
               <h3 className="mt-4 text-[19px] text-ink">{s.name}</h3>
-              <p className="mt-2 inline-flex items-center gap-1.5 text-[14px] text-ink-soft">
+              <p className="mt-2.5 inline-flex items-center gap-2 text-[14px] text-ink-soft">
                 <Clock size={15} strokeWidth={2.2} />
                 {s.duration}
               </p>

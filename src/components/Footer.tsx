@@ -1,4 +1,4 @@
-import { MessageCircle, Send, Camera, Mail, MapPin, Phone } from "lucide-react";
+import { MessageCircle, Camera, Mail, MapPin, Phone } from "lucide-react";
 import { site, footer } from "../content";
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
             <p className="mt-4 max-w-sm text-[14px] text-white/60">
               {footer.about}
             </p>
-            <p className="mt-4 inline-flex items-center gap-1.5 text-[14px] text-white/60">
+            <p className="mt-4 inline-flex items-center gap-2 text-[14px] text-white/60">
               <MapPin size={15} strokeWidth={2.2} />
               {site.officeCity}
             </p>
@@ -42,14 +42,6 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 text-white/80 hover:text-white"
               >
                 <MessageCircle size={17} strokeWidth={2.2} /> WhatsApp
-              </a>
-              <a
-                href={site.telegram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white"
-              >
-                <Send size={17} strokeWidth={2.2} /> Telegram
               </a>
               <a
                 href={site.instagram}

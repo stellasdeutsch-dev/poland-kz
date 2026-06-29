@@ -203,7 +203,7 @@ export default function Quiz() {
             {phase !== "done" && (stepIndex > 0 || phase === "form") && (
               <button
                 onClick={back}
-                className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink-soft hover:text-ink"
+                className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-ink-soft hover:text-ink"
               >
                 <ArrowLeft size={16} strokeWidth={2.4} />
                 Назад

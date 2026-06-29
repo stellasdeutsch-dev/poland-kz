@@ -1,4 +1,4 @@
-import { MessageCircle, Send } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { site } from "../content";
 import { scrollToId, QUIZ_ID } from "../lib/scroll";
 
@@ -25,19 +25,10 @@ export default function Header() {
             href={site.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="WhatsApp"
+            aria-label="Написать в WhatsApp"
             className="grid h-10 w-10 place-items-center rounded-xl border border-ink/12 text-ink hover:border-ink transition-colors"
           >
             <MessageCircle size={18} strokeWidth={2.4} />
-          </a>
-          <a
-            href={site.telegram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Telegram"
-            className="grid h-10 w-10 place-items-center rounded-xl border border-ink/12 text-ink hover:border-ink transition-colors"
-          >
-            <Send size={18} strokeWidth={2.4} />
           </a>
           <button
             onClick={() => scrollToId(QUIZ_ID)}

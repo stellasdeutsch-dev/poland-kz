@@ -13,10 +13,12 @@ export default function WhyPoland() {
               <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/8 text-primary group-hover:bg-primary/15">
                 <Icon name={c.icon} size={24} />
               </div>
-              <h3 className="mt-4 text-[18px] sm:text-[20px] text-ink">
+              <h3 className="mt-5 text-[18px] sm:text-[20px] text-ink">
                 {c.title}
               </h3>
-              <p className="mt-2 text-[15px] text-ink-soft">{c.text}</p>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+                {c.text}
+              </p>
             </div>
           </Reveal>
         ))}
