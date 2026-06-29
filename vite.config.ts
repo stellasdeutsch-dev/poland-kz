@@ -3,9 +3,11 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
-// `base` is set for GitHub Pages project site (served from /poland-kz/).
-// Dev server stays at root for convenience.
+// Base path differs per host:
+//   - GitHub Pages serves from a sub-path /poland-kz/ → the Actions workflow
+//     sets GITHUB_PAGES=true so the build uses that base.
+//   - Cloudflare Pages (and the dev server) serve from the domain root → base '/'.
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/poland-kz/' : '/',
+  base: command === 'build' && process.env.GITHUB_PAGES ? '/poland-kz/' : '/',
   plugins: [react(), tailwindcss()],
 }))
