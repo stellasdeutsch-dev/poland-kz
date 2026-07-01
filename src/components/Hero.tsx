@@ -1,11 +1,13 @@
 import { ArrowRight, ShieldCheck } from "lucide-react";
-import { hero } from "../content";
+import { useContent, useLang } from "../i18n";
 import { scrollToId, QUIZ_ID } from "../lib/scroll";
 import { unsplash, unsplashSrcSet } from "../lib/img";
 import MessengerButtons from "./MessengerButtons";
 import { Reveal } from "./ui";
 
 export default function Hero() {
+  const { hero } = useContent();
+  const { lang } = useLang();
   return (
     <section id="top" className="relative overflow-hidden">
       {/* soft animated background accents */}
@@ -94,10 +96,10 @@ export default function Hero() {
                   <ShieldCheck size={18} strokeWidth={2.4} />
                 </span>
                 <span className="text-[13px] font-bold text-ink leading-tight">
-                  100% гарантия
+                  {lang === "kz" ? "100% кепілдік" : "100% гарантия"}
                   <br />
                   <span className="font-medium text-ink-soft">
-                    или вернём взнос
+                    {lang === "kz" ? "немесе қайтарамыз" : "или вернём взнос"}
                   </span>
                 </span>
               </div>

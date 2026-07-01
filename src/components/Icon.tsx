@@ -20,6 +20,7 @@ import {
   MapPin,
   Star,
   Users,
+  Landmark,
   type LucideIcon,
 } from "lucide-react";
 
@@ -45,6 +46,7 @@ const map: Record<string, LucideIcon> = {
   MapPin,
   Star,
   Users,
+  Landmark,
 };
 
 export default function Icon({

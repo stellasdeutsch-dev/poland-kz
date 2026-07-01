@@ -1,8 +1,9 @@
-import { whyPoland } from "../content";
+import { useContent } from "../i18n";
 import { Section, SectionHead, Reveal } from "./ui";
 import Icon from "./Icon";
 
 export default function WhyPoland() {
+  const { whyPoland } = useContent();
   return (
     <Section>
       <SectionHead eyebrow={whyPoland.eyebrow} title={whyPoland.title} />

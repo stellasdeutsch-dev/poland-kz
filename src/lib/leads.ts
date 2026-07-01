@@ -1,4 +1,7 @@
-import { quiz } from "../content";
+import { content } from "../content";
+
+// Lead labels go to the manager's sheet — always in Russian for consistency.
+const quiz = content.ru.quiz;
 
 /**
  * Lead capture layer.

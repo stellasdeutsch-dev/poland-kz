@@ -1,9 +1,10 @@
 import { MapPin, Quote } from "lucide-react";
-import { cases } from "../content";
+import { useContent } from "../i18n";
 import { Section, SectionHead, Reveal } from "./ui";
 import { unsplash, unsplashSrcSet } from "../lib/img";
 
 export default function Cases() {
+  const { cases } = useContent();
   return (
     <Section>
       <SectionHead eyebrow={cases.eyebrow} title={cases.title} />

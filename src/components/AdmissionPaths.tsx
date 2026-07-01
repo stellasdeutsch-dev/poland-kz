@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Check, GraduationCap, Award, Zap } from "lucide-react";
-import { admissionPaths } from "../content";
+import { useContent } from "../i18n";
 import { Section, SectionHead } from "./ui";
 
 export default function AdmissionPaths() {
+  const { admissionPaths } = useContent();
   const [active, setActive] = useState(admissionPaths.paths[0].id);
   const path =
     admissionPaths.paths.find((p) => p.id === active) ?? admissionPaths.paths[0];

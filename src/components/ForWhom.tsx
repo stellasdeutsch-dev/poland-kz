@@ -1,8 +1,9 @@
-import { forWhom } from "../content";
+import { useContent } from "../i18n";
 import { Section, SectionHead, Reveal } from "./ui";
 import Icon from "./Icon";
 
 export default function ForWhom() {
+  const { forWhom } = useContent();
   return (
     <Section className="bg-surface">
       <SectionHead eyebrow={forWhom.eyebrow} title={forWhom.title} />

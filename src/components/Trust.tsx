@@ -1,8 +1,9 @@
-import { trust } from "../content";
+import { useContent } from "../i18n";
 import { SectionHead, Reveal } from "./ui";
 import Icon from "./Icon";
 
 export default function Trust() {
+  const { trust } = useContent();
   return (
     <section className="py-20 sm:py-28 lg:py-36">
       <div className="container-x">

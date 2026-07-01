@@ -1,9 +1,11 @@
 import { Clock } from "lucide-react";
-import { specialties } from "../content";
+import { useContent, useLang } from "../i18n";
 import { Section, SectionHead, Reveal } from "./ui";
 import Icon from "./Icon";
 
 export default function Specialties() {
+  const { specialties } = useContent();
+  const { lang } = useLang();
   return (
     <Section>
       <SectionHead
@@ -30,7 +32,7 @@ export default function Specialties() {
               </p>
               <div className="mt-4 border-t border-ink/8 pt-4">
                 <p className="text-[12px] font-semibold uppercase tracking-wide text-ink-soft">
-                  Рекомендуем вузы
+                  {lang === "kz" ? "Ұсынылатын университеттер" : "Рекомендуем вузы"}
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {s.universities.map((u) => (

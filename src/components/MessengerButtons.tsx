@@ -1,5 +1,5 @@
 import { MessageCircle } from "lucide-react";
-import { site, hero } from "../content";
+import { useContent, useLang } from "../i18n";
 
 /** WhatsApp contact button. */
 export default function MessengerButtons({
@@ -7,7 +7,10 @@ export default function MessengerButtons({
 }: {
   size?: "sm" | "md";
 }) {
+  const { site } = useContent();
+  const { lang } = useLang();
   const pad = size === "sm" ? "min-h-11 px-4 text-[15px]" : "";
+  const label = lang === "kz" ? "WhatsApp-қа жазу" : "Написать в WhatsApp";
   return (
     <a
       href={site.whatsapp}
@@ -16,7 +19,7 @@ export default function MessengerButtons({
       className={`btn btn-outline w-full gap-2.5 ${pad}`}
     >
       <MessageCircle size={19} strokeWidth={2.4} />
-      Написать в {hero.ctaWhatsApp}
+      {label}
     </a>
   );
 }

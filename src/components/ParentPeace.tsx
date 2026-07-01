@@ -1,8 +1,9 @@
-import { parentPeace } from "../content";
+import { useContent } from "../i18n";
 import { SectionHead, Reveal } from "./ui";
 import Icon from "./Icon";
 
 export default function ParentPeace() {
+  const { parentPeace } = useContent();
   return (
     <section className="py-14 sm:py-20 lg:py-24">
       <div className="container-x">

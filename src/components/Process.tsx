@@ -1,7 +1,8 @@
-import { process } from "../content";
+import { useContent } from "../i18n";
 import { Section, SectionHead, Reveal } from "./ui";
 
 export default function Process() {
+  const { process } = useContent();
   return (
     <Section className="bg-surface">
       <SectionHead eyebrow={process.eyebrow} title={process.title} />

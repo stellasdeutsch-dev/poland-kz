@@ -1,8 +1,9 @@
 import { ArrowRight } from "lucide-react";
-import { promoBar } from "../content";
+import { useContent } from "../i18n";
 import { scrollToId, QUIZ_ID } from "../lib/scroll";
 
 export default function PromoBar() {
+  const { promoBar } = useContent();
   return (
     <button
       onClick={() => scrollToId(QUIZ_ID)}

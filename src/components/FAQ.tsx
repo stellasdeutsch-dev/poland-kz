@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { faq } from "../content";
+import { useContent } from "../i18n";
 import { Section, SectionHead } from "./ui";
 
 export default function FAQ() {
+  const { faq } = useContent();
   const [open, setOpen] = useState<number | null>(0);
 
   return (

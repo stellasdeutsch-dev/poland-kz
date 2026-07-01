@@ -1,7 +1,9 @@
 import { MessageCircle, Camera, Mail, MapPin, Phone } from "lucide-react";
-import { site, footer } from "../content";
+import { useContent, useLang } from "../i18n";
 
 export default function Footer() {
+  const { site, footer } = useContent();
+  const { lang } = useLang();
   return (
     <footer className="bg-ink pb-28 pt-14 text-white sm:pb-14">
       <div className="container-x">
@@ -26,7 +28,7 @@ export default function Footer() {
 
           <div>
             <p className="font-display text-[14px] font-bold uppercase tracking-wide text-white/40">
-              Связаться
+              {lang === "kz" ? "Байланыс" : "Связаться"}
             </p>
             <div className="mt-4 grid gap-3 text-[15px]">
               <a
@@ -62,7 +64,7 @@ export default function Footer() {
 
           <div>
             <p className="font-display text-[14px] font-bold uppercase tracking-wide text-white/40">
-              Документы
+              {lang === "kz" ? "Құжаттар" : "Документы"}
             </p>
             <div className="mt-4 grid gap-3 text-[15px]">
               <a href="#" className="text-white/80 hover:text-white">

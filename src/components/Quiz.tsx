@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Gift, CheckCircle2 } from "lucide-react";
-import { quiz } from "../content";
+import { useContent, useLang } from "../i18n";
 import { QUIZ_ID } from "../lib/scroll";
 import { submitLead, readableAnswers } from "../lib/leads";
 
 type Phase = "questions" | "form" | "done";
 
 export default function Quiz() {
+  const { quiz } = useContent();
+  const { lang } = useLang();
+  const t = (r: string, k: string) => (lang === "kz" ? k : r);
   const total = quiz.steps.length;
   const [phase, setPhase] = useState<Phase>("questions");
   const [stepIndex, setStepIndex] = useState(0);
@@ -81,8 +84,11 @@ export default function Quiz() {
               <div className="flex items-center justify-between text-[12px] font-semibold text-ink-soft mb-2">
                 <span>
                   {phase === "done"
-                    ? "Готово"
-                    : `Шаг ${stepNumber} из ${total + 1}`}
+                    ? t("Готово", "Дайын")
+                    : t(
+                        `Шаг ${stepNumber} из ${total + 1}`,
+                        `Қадам ${stepNumber} / ${total + 1}`,
+                      )}
                 </span>
                 <span>{Math.round(progress)}%</span>
               </div>
@@ -148,7 +154,7 @@ export default function Quiz() {
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        placeholder="Например, Алия"
+                        placeholder={t("Например, Алия", "Мысалы, Әлия")}
                         className="h-12 rounded-xl border border-ink/12 bg-white px-4 text-[16px] text-ink outline-none focus:border-primary"
                       />
                     </label>
@@ -187,13 +193,18 @@ export default function Quiz() {
                   <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-success/10 text-success">
                     <CheckCircle2 size={36} strokeWidth={2} />
                   </div>
-                  <h3 className="mt-4 text-[22px] text-ink">Спасибо!</h3>
+                  <h3 className="mt-4 text-[22px] text-ink">
+                    {t("Спасибо!", "Рахмет!")}
+                  </h3>
                   <p className="mx-auto mt-2 max-w-sm text-[15px] text-ink-soft">
                     {quiz.successMsg}
                   </p>
                   <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-[13px] font-semibold text-ink">
                     <Gift size={16} className="text-primary" />
-                    Гайд о поступлении уже в пути
+                    {t(
+                      "Гайд о поступлении уже в пути",
+                      "Түсу туралы гайд жолда",
+                    )}
                   </div>
                 </div>
               )}
@@ -206,14 +217,17 @@ export default function Quiz() {
                 className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-ink-soft hover:text-ink"
               >
                 <ArrowLeft size={16} strokeWidth={2.4} />
-                Назад
+                {t("Назад", "Артқа")}
               </button>
             )}
           </div>
 
-          <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-[13px] text-ink-soft">
+          <p className="mt-4 flex items-center justify-center gap-2 text-center text-[13px] text-ink-soft">
             <Check size={15} className="text-success" strokeWidth={3} />
-            Без спама. Сначала напишем в мессенджер.
+            {t(
+              "Без спама. Сначала напишем в мессенджер.",
+              "Спамсыз. Алдымен мессенджерге жазамыз.",
+            )}
           </p>
         </div>
       </div>

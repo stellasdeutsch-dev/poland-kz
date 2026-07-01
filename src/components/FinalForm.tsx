@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Check, ShieldCheck, CheckCircle2, Gift } from "lucide-react";
-import { finalForm } from "../content";
+import { useContent, useLang } from "../i18n";
 import { FORM_ID } from "../lib/scroll";
 import { submitLead } from "../lib/leads";
 
 export default function FinalForm() {
+  const { finalForm } = useContent();
+  const { lang } = useLang();
+  const t = (r: string, k: string) => (lang === "kz" ? k : r);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [consent, setConsent] = useState(true);
@@ -60,7 +63,9 @@ export default function FinalForm() {
                   <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-success/10 text-success">
                     <CheckCircle2 size={36} strokeWidth={2} />
                   </div>
-                  <h3 className="mt-4 text-[22px] text-ink">Заявка принята</h3>
+                  <h3 className="mt-4 text-[22px] text-ink">
+                    {t("Заявка принята", "Өтінім қабылданды")}
+                  </h3>
                   <p className="mx-auto mt-2 max-w-xs text-[15px] text-ink-soft">
                     {finalForm.successMsg}
                   </p>
@@ -70,7 +75,7 @@ export default function FinalForm() {
               <form onSubmit={submit} className="grid gap-4">
                 <div className="inline-flex items-center gap-2 self-start rounded-full bg-promo px-3 py-1.5 text-[13px] font-extrabold text-ink">
                   <Gift size={15} />
-                  Гайд о поступлении в подарок
+                  {t("Гайд о поступлении в подарок", "Түсу туралы гайд сыйға")}
                 </div>
 
                 <label className="grid gap-1.5">
@@ -81,7 +86,7 @@ export default function FinalForm() {
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Ваше имя"
+                    placeholder={t("Ваше имя", "Атыңыз")}
                     className="h-12 rounded-xl border border-ink/12 bg-white px-4 text-[16px] text-ink outline-none focus:border-primary"
                   />
                 </label>

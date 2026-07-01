@@ -1,8 +1,9 @@
 import { MessageCircle } from "lucide-react";
-import { site } from "../content";
+import { useContent } from "../i18n";
 
 /** Floating WhatsApp button, always visible (bottom-right). */
 export default function FloatingContact() {
+  const { site } = useContent();
   return (
     <a
       href={site.whatsapp}

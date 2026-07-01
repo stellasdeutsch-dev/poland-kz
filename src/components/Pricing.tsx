@@ -1,9 +1,14 @@
 import { Check, ShieldCheck, CreditCard } from "lucide-react";
-import { pricing } from "../content";
+import { useContent, useLang } from "../i18n";
 import { Section, SectionHead, Reveal } from "./ui";
 import { scrollToId, FORM_ID } from "../lib/scroll";
 
 export default function Pricing() {
+  const { pricing } = useContent();
+  const { lang } = useLang();
+  const single = pricing.packages.length === 1;
+  const cta = lang === "kz" ? "Өтінім қалдыру" : "Оставить заявку";
+
   return (
     <Section className="bg-surface">
       <SectionHead eyebrow={pricing.eyebrow} title={pricing.title} />
@@ -15,19 +20,25 @@ export default function Pricing() {
         </span>
       </div>
 
-      <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-3">
+      <div
+        className={`mt-8 items-stretch gap-4 ${
+          single ? "mx-auto max-w-md" : "grid lg:grid-cols-3"
+        }`}
+      >
         {pricing.packages.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.08}>
             <div
-              className={`relative flex h-full flex-col rounded-[24px] p-6 sm:p-7 transition-all duration-300 ${
+              className={`relative flex h-full flex-col rounded-[24px] p-6 sm:p-8 transition-all duration-300 ${
                 p.highlighted
-                  ? "bg-ink text-white shadow-[0_30px_70px_-30px_rgba(40,38,255,0.6)] lg:-mt-3 lg:mb-3 hover:shadow-[0_40px_90px_-30px_rgba(40,38,255,0.8)]"
+                  ? `bg-ink text-white shadow-[0_30px_70px_-30px_rgba(40,38,255,0.6)] hover:shadow-[0_40px_90px_-30px_rgba(40,38,255,0.8)] ${
+                      single ? "" : "lg:-mt-3 lg:mb-3"
+                    }`
                   : "card card-hover card-glow"
               }`}
             >
-              {p.highlighted && (
+              {!single && p.highlighted && (
                 <span className="absolute right-5 top-5 rounded-full bg-promo px-3 py-1 text-[12px] font-extrabold text-ink">
-                  Хит
+                  {lang === "kz" ? "Хит" : "Хит"}
                 </span>
               )}
               <h3
@@ -43,12 +54,12 @@ export default function Pricing() {
                 {p.tagline}
               </p>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="font-display text-[40px] font-extrabold tracking-tight">
+                <span className="font-display text-[38px] sm:text-[40px] font-extrabold tracking-tight">
                   {p.price}
                 </span>
               </div>
 
-              <ul className="mt-5 grid gap-2.5">
+              <ul className="mt-5 grid gap-3">
                 {p.features.map((f) => (
                   <li
                     key={f}
@@ -72,11 +83,11 @@ export default function Pricing() {
 
               <button
                 onClick={() => scrollToId(FORM_ID)}
-                className={`btn mt-6 w-full ${
+                className={`btn mt-7 w-full ${
                   p.highlighted ? "btn-primary" : "btn-dark"
                 }`}
               >
-                Выбрать пакет
+                {cta}
               </button>
             </div>
           </Reveal>
