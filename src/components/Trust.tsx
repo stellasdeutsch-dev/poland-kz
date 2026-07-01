@@ -21,23 +21,6 @@ export default function Trust() {
             </Reveal>
           ))}
         </div>
-
-        {/* Partner logos (placeholders) */}
-        <div className="mt-14 text-center">
-          <p className="text-[13px] font-semibold uppercase tracking-wide text-ink-soft">
-            {trust.partnersTitle}
-          </p>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-            {trust.partners.map((p) => (
-              <span
-                key={p}
-                className="rounded-xl bg-surface px-5 py-3 font-display text-[16px] font-extrabold text-ink/60"
-              >
-                {p}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

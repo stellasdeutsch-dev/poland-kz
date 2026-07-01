@@ -473,8 +473,6 @@ const ru = {
         text: "8 лет назад сами были абитуриентами. Знаем систему изнутри.",
       },
     ],
-    partnersTitle: "Поступаем в вузы-партнёры",
-    partners: ["Kozminski", "SWPS", "Vistula", "WSB Merito", "PJATK", "Łazarski"],
   },
 
   faq: {
@@ -973,8 +971,6 @@ const kz: typeof ru = {
         text: "8 жыл бұрын өзіміз де талапкер болдық. Жүйені ішінен білеміз.",
       },
     ],
-    partnersTitle: "Серіктес университеттерге түсеміз",
-    partners: ["Kozminski", "SWPS", "Vistula", "WSB Merito", "PJATK", "Łazarski"],
   },
 
   faq: {
